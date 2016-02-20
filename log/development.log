@@ -2775,3 +2775,137 @@ Started GET "/apipie/javascripts/bundled/jquery-1.7.2.js" for 127.0.0.1 at 2016-
 
 
 Started GET "/apipie/javascripts/apipie.js" for 127.0.0.1 at 2016-02-20 14:29:52 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateLaneTemplates (20160220133229)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "lane_templates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160220133229"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "lane_templates" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Test Lane template"], ["description", "test"], ["created_at", "2016-02-20 13:33:59.583006"], ["updated_at", "2016-02-20 13:33:59.583006"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/lane_templates" for 192.168.1.82 at 2016-02-20 14:36:09 +0100
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by LaneTemplatesController#index as HTML
+  [1m[36mLaneTemplate Load (0.2ms)[0m  [1mSELECT "lane_templates".* FROM "lane_templates"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModel::Serializer::Adapter::JsonApi (1.05ms)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 0.4ms)
+REST_API: skipping LaneTemplatesController#index
+
+
+Started GET "/lane_templates" for 192.168.1.82 at 2016-02-20 14:36:33 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LaneTemplatesController#index as HTML
+  [1m[35mLaneTemplate Load (0.2ms)[0m  SELECT "lane_templates".* FROM "lane_templates"
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModel::Serializer::Adapter::JsonApi (1.21ms)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/apipie/1.0/lanes/index.html" for 127.0.0.1 at 2016-02-20 14:36:47 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Apipie::ApipiesController#index as HTML
+  Parameters: {"version"=>"1.0", "resource"=>"lanes", "method"=>"index.html"}
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_languages.erb (0.4ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_params.html.erb (1.2ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_headers.html.erb (0.5ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_method_detail.erb (360.6ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/method.html.erb within layouts/apipie/apipie (367.9ms)
+Completed 200 OK in 440ms (Views: 377.5ms)
+REST_API: skipping Apipie::ApipiesController#index
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap.min.css" for 127.0.0.1 at 2016-02-20 14:36:48 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/prettify.css" for 127.0.0.1 at 2016-02-20 14:36:48 +0100
+
+
+Started GET "/apipie/javascripts/bundled/prettify.js" for 127.0.0.1 at 2016-02-20 14:36:48 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap-responsive.min.css" for 127.0.0.1 at 2016-02-20 14:36:48 +0100
+
+
+Started GET "/apipie/stylesheets/application.css" for 127.0.0.1 at 2016-02-20 14:36:48 +0100
+
+
+Started GET "/apipie/javascripts/bundled/bootstrap-collapse.js" for 127.0.0.1 at 2016-02-20 14:36:48 +0100
+
+
+Started GET "/apipie/javascripts/bundled/jquery-1.7.2.js" for 127.0.0.1 at 2016-02-20 14:36:48 +0100
+
+
+Started GET "/apipie/javascripts/apipie.js" for 127.0.0.1 at 2016-02-20 14:36:48 +0100
+
+
+Started GET "/apipie/1.0/lanes.html" for 127.0.0.1 at 2016-02-20 14:36:48 +0100
+Processing by Apipie::ApipiesController#index as HTML
+  Parameters: {"version"=>"1.0", "resource"=>"lanes.html"}
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_languages.erb (0.0ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_headers.html.erb (0.0ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_params.html.erb (0.5ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_headers.html.erb (0.0ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_method_detail.erb (3.8ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/resource.html.erb within layouts/apipie/apipie (10.4ms)
+Completed 200 OK in 52ms (Views: 14.3ms)
+REST_API: skipping Apipie::ApipiesController#index
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap.min.css" for 127.0.0.1 at 2016-02-20 14:36:48 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/prettify.css" for 127.0.0.1 at 2016-02-20 14:36:48 +0100
+
+
+Started GET "/apipie/javascripts/bundled/bootstrap-collapse.js" for 127.0.0.1 at 2016-02-20 14:36:48 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap-responsive.min.css" for 127.0.0.1 at 2016-02-20 14:36:48 +0100
+
+
+Started GET "/apipie/javascripts/bundled/jquery-1.7.2.js" for 127.0.0.1 at 2016-02-20 14:36:48 +0100
+
+
+Started GET "/apipie/stylesheets/application.css" for 127.0.0.1 at 2016-02-20 14:36:48 +0100
+
+
+Started GET "/apipie/javascripts/bundled/prettify.js" for 127.0.0.1 at 2016-02-20 14:36:48 +0100
+
+
+Started GET "/apipie/javascripts/apipie.js" for 127.0.0.1 at 2016-02-20 14:36:48 +0100
+
+
+Started GET "/apipie/1.0.html" for 127.0.0.1 at 2016-02-20 14:36:50 +0100
+Processing by Apipie::ApipiesController#index as HTML
+  Parameters: {"version"=>"1.0.html"}
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_languages.erb (0.1ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/index.html.erb within layouts/apipie/apipie (3.2ms)
+Completed 200 OK in 46ms (Views: 7.2ms)
+REST_API: skipping Apipie::ApipiesController#index
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap.min.css" for 127.0.0.1 at 2016-02-20 14:36:51 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap-responsive.min.css" for 127.0.0.1 at 2016-02-20 14:36:51 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/prettify.css" for 127.0.0.1 at 2016-02-20 14:36:51 +0100
+
+
+Started GET "/apipie/javascripts/bundled/prettify.js" for 127.0.0.1 at 2016-02-20 14:36:51 +0100
+
+
+Started GET "/apipie/stylesheets/application.css" for 127.0.0.1 at 2016-02-20 14:36:51 +0100
+
+
+Started GET "/apipie/javascripts/bundled/jquery-1.7.2.js" for 127.0.0.1 at 2016-02-20 14:36:51 +0100
+
+
+Started GET "/apipie/javascripts/bundled/bootstrap-collapse.js" for 127.0.0.1 at 2016-02-20 14:36:51 +0100
+
+
+Started GET "/apipie/javascripts/apipie.js" for 127.0.0.1 at 2016-02-20 14:36:51 +0100

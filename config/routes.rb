@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :lane_templates, except: [:new, :edit]
   resources :lanes, except: [:new, :edit]
   apipie
   resources :actions, except: [:new, :edit]
