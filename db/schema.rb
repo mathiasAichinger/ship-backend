@@ -11,14 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160220141819) do
+ActiveRecord::Schema.define(version: 20160220185334) do
 
   create_table "action_templates", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "icon_url"
+    t.integer  "action_templates_id"
+    t.integer  "parent_id"
   end
+
+  add_index "action_templates", ["action_templates_id"], name: "index_action_templates_on_action_templates_id"
+  add_index "action_templates", ["parent_id"], name: "index_action_templates_on_parent_id"
 
   create_table "action_templates_lane_templates", id: false, force: :cascade do |t|
     t.integer "lane_template_id"
