@@ -24,12 +24,20 @@ class BuildsController < ApplicationController
   end
 
   def create
-    @build = Build.new(build_params)
+    clearedParams = build_params
+
+    @build = Build.new(name: clearedParams[:name])
     @build.name = "Build" if @build.name.nil? || @build.name.empty?
     @build.startDate = Time.now
     @build.status = "pending"
 
-    lane_template = LaneTemplate.find(2)
+
+    app = App.find(clearedParams[:app_id])
+    @build.app = app
+
+    lane_template = LaneTemplate.find(clearedParams[:lane_template_id])
+
+
 
     lane = Lane.new
     lane.lane_template = lane_template
@@ -69,6 +77,6 @@ class BuildsController < ApplicationController
   end
 
   def build_params
-    params.require(:data).require(:attributes).permit(:name, :lane_template_id)
+    params.require(:data).require(:attributes).permit(:name, :app_id, :lane_template_id)
   end
 end
