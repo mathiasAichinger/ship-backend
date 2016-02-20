@@ -21,5 +21,4 @@ class BuildsController < ApplicationController
     render json: Build.find(id), include: included
   end
 
-
 end
