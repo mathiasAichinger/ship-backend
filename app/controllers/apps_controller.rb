@@ -37,6 +37,22 @@ class AppsController < ApplicationController
     end
   end
 
+  def update
+    @app = App.find_by(id: params[:id])
+    unless @app
+      render json: {:errors => ["Ressouce not found"]}, status: :not_found
+      return
+    end
+
+    @app.attributes = app_params
+
+    if @app.save
+      render json: @app
+    else
+      render json: {errors: @app.errors}, status: :unprocessable_entity
+    end
+  end
+
   api :DELETE, '/apps/:id', "Deletes the given app"
   param :id, :number, "Id of the App"
   def destroy
