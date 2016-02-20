@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160220140130) do
+ActiveRecord::Schema.define(version: 20160220141220) do
 
   create_table "action_templates", force: :cascade do |t|
     t.string   "name"
@@ -65,7 +65,10 @@ ActiveRecord::Schema.define(version: 20160220140130) do
     t.datetime "endDate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "app_id"
   end
+
+  add_index "builds", ["app_id"], name: "index_builds_on_app_id"
 
   create_table "lane_templates", force: :cascade do |t|
     t.string   "name"
