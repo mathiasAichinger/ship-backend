@@ -2164,3 +2164,452 @@ Migrating to CreateActions (20160220092045)
   [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160220092045"]]
   [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "apps" ("key", "name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["key", "testapp"], ["name", "Test App"], ["description", "A Test app"], ["created_at", "2016-02-20 11:33:25.649149"], ["updated_at", "2016-02-20 11:33:25.649149"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "builds" ("name", "status", "progress", "startDate", "endDate", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "Test Build"], ["status", "finished"], ["progress", 100.0], ["startDate", "2016-02-20 11:34:11.712323"], ["endDate", "2016-02-20 11:34:21.198754"], ["created_at", "2016-02-20 11:34:25.763176"], ["updated_at", "2016-02-20 11:34:25.763176"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "actions" ("name", "description", "progress", "status", "logs", "startDate", "endDate", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "deliver"], ["description", "Uploads the metadata to iTunesConnect"], ["progress", 100.0], ["status", "finished"], ["logs", "empty"], ["startDate", "2016-02-20 11:38:33.820423"], ["endDate", "2016-02-20 11:38:43.842958"], ["created_at", "2016-02-20 11:38:46.804278"], ["updated_at", "2016-02-20 11:38:46.804278"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+
+
+Started GET "/apipie/1.0/builds.html" for 192.168.1.82 at 2016-02-20 12:39:00 +0100
+Processing by Apipie::ApipiesController#index as HTML
+  Parameters: {"version"=>"1.0", "resource"=>"builds.html"}
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_languages.erb (0.1ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_headers.html.erb (0.1ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_params.html.erb (0.5ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_headers.html.erb (0.0ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_method_detail.erb (3.9ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/resource.html.erb within layouts/apipie/apipie (11.4ms)
+Completed 200 OK in 43ms (Views: 16.4ms)
+REST_API: skipping Apipie::ApipiesController#index
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap.min.css" for 192.168.1.82 at 2016-02-20 12:39:00 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/prettify.css" for 192.168.1.82 at 2016-02-20 12:39:00 +0100
+
+
+Started GET "/apipie/javascripts/bundled/prettify.js" for 192.168.1.82 at 2016-02-20 12:39:00 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap-responsive.min.css" for 192.168.1.82 at 2016-02-20 12:39:00 +0100
+
+
+Started GET "/apipie/javascripts/apipie.js" for 192.168.1.82 at 2016-02-20 12:39:00 +0100
+
+
+Started GET "/apipie/stylesheets/application.css" for 192.168.1.82 at 2016-02-20 12:39:00 +0100
+
+
+Started GET "/apipie/javascripts/bundled/bootstrap-collapse.js" for 192.168.1.82 at 2016-02-20 12:39:00 +0100
+
+
+Started GET "/apipie/javascripts/bundled/jquery-1.7.2.js" for 192.168.1.82 at 2016-02-20 12:39:00 +0100
+
+
+Started GET "/apipie/1.0.html" for 192.168.1.82 at 2016-02-20 12:39:01 +0100
+Processing by Apipie::ApipiesController#index as HTML
+  Parameters: {"version"=>"1.0.html"}
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_languages.erb (0.1ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/index.html.erb within layouts/apipie/apipie (1.6ms)
+Completed 200 OK in 29ms (Views: 6.1ms)
+REST_API: skipping Apipie::ApipiesController#index
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap.min.css" for 192.168.1.82 at 2016-02-20 12:39:01 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/prettify.css" for 192.168.1.82 at 2016-02-20 12:39:01 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap-responsive.min.css" for 192.168.1.82 at 2016-02-20 12:39:01 +0100
+
+
+Started GET "/apipie/stylesheets/application.css" for 192.168.1.82 at 2016-02-20 12:39:01 +0100
+
+
+Started GET "/apipie/javascripts/bundled/jquery-1.7.2.js" for 192.168.1.82 at 2016-02-20 12:39:01 +0100
+
+
+Started GET "/apipie/javascripts/bundled/bootstrap-collapse.js" for 192.168.1.82 at 2016-02-20 12:39:01 +0100
+
+
+Started GET "/apipie/javascripts/bundled/prettify.js" for 192.168.1.82 at 2016-02-20 12:39:01 +0100
+
+
+Started GET "/apipie/javascripts/apipie.js" for 192.168.1.82 at 2016-02-20 12:39:01 +0100
+
+
+Started GET "/apipie/1.0.html" for 192.168.1.82 at 2016-02-20 12:39:02 +0100
+Processing by Apipie::ApipiesController#index as HTML
+  Parameters: {"version"=>"1.0.html"}
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_languages.erb (0.0ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/index.html.erb within layouts/apipie/apipie (1.4ms)
+Completed 200 OK in 35ms (Views: 4.6ms)
+REST_API: skipping Apipie::ApipiesController#index
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap.min.css" for 192.168.1.82 at 2016-02-20 12:39:02 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap-responsive.min.css" for 192.168.1.82 at 2016-02-20 12:39:02 +0100
+
+
+Started GET "/apipie/stylesheets/application.css" for 192.168.1.82 at 2016-02-20 12:39:02 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/prettify.css" for 192.168.1.82 at 2016-02-20 12:39:02 +0100
+
+
+Started GET "/apipie/javascripts/bundled/jquery-1.7.2.js" for 192.168.1.82 at 2016-02-20 12:39:02 +0100
+
+
+Started GET "/apipie/javascripts/bundled/bootstrap-collapse.js" for 192.168.1.82 at 2016-02-20 12:39:02 +0100
+
+
+Started GET "/apipie/javascripts/bundled/prettify.js" for 192.168.1.82 at 2016-02-20 12:39:02 +0100
+
+
+Started GET "/apipie/javascripts/apipie.js" for 192.168.1.82 at 2016-02-20 12:39:02 +0100
+
+
+Started GET "/apipie/1.0/apps/index.html" for 192.168.1.82 at 2016-02-20 12:39:03 +0100
+Processing by Apipie::ApipiesController#index as HTML
+  Parameters: {"version"=>"1.0", "resource"=>"apps", "method"=>"index.html"}
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_languages.erb (0.0ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_params.html.erb (0.4ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_headers.html.erb (0.1ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_method_detail.erb (3.3ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/method.html.erb within layouts/apipie/apipie (6.1ms)
+Completed 200 OK in 43ms (Views: 10.3ms)
+REST_API: skipping Apipie::ApipiesController#index
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap.min.css" for 192.168.1.82 at 2016-02-20 12:39:03 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/prettify.css" for 192.168.1.82 at 2016-02-20 12:39:03 +0100
+
+
+Started GET "/apipie/javascripts/bundled/jquery-1.7.2.js" for 192.168.1.82 at 2016-02-20 12:39:03 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap-responsive.min.css" for 192.168.1.82 at 2016-02-20 12:39:03 +0100
+
+
+Started GET "/apipie/stylesheets/application.css" for 192.168.1.82 at 2016-02-20 12:39:03 +0100
+
+
+Started GET "/apipie/javascripts/bundled/bootstrap-collapse.js" for 192.168.1.82 at 2016-02-20 12:39:03 +0100
+
+
+Started GET "/apipie/javascripts/bundled/prettify.js" for 192.168.1.82 at 2016-02-20 12:39:03 +0100
+
+
+Started GET "/apipie/javascripts/apipie.js" for 192.168.1.82 at 2016-02-20 12:39:03 +0100
+
+
+Started GET "/apipie/1.0/apps/show.html" for 192.168.1.82 at 2016-02-20 12:39:05 +0100
+Processing by Apipie::ApipiesController#index as HTML
+  Parameters: {"version"=>"1.0", "resource"=>"apps", "method"=>"show.html"}
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_languages.erb (0.0ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_params.html.erb (0.7ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_headers.html.erb (0.0ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_method_detail.erb (3.0ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/method.html.erb within layouts/apipie/apipie (5.3ms)
+Completed 200 OK in 38ms (Views: 8.9ms)
+REST_API: skipping Apipie::ApipiesController#index
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap.min.css" for 192.168.1.82 at 2016-02-20 12:39:05 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/prettify.css" for 192.168.1.82 at 2016-02-20 12:39:05 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap-responsive.min.css" for 192.168.1.82 at 2016-02-20 12:39:05 +0100
+
+
+Started GET "/apipie/javascripts/bundled/jquery-1.7.2.js" for 192.168.1.82 at 2016-02-20 12:39:05 +0100
+
+
+Started GET "/apipie/stylesheets/application.css" for 192.168.1.82 at 2016-02-20 12:39:05 +0100
+
+
+Started GET "/apipie/javascripts/bundled/bootstrap-collapse.js" for 192.168.1.82 at 2016-02-20 12:39:05 +0100
+
+
+Started GET "/apipie/javascripts/bundled/prettify.js" for 192.168.1.82 at 2016-02-20 12:39:05 +0100
+
+
+Started GET "/apipie/javascripts/apipie.js" for 192.168.1.82 at 2016-02-20 12:39:05 +0100
+
+
+Started GET "/apipie/1.0/actions/index.html" for 192.168.1.82 at 2016-02-20 12:39:08 +0100
+Processing by Apipie::ApipiesController#index as HTML
+  Parameters: {"version"=>"1.0", "resource"=>"actions", "method"=>"index.html"}
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_languages.erb (0.0ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_params.html.erb (0.4ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_headers.html.erb (0.0ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_method_detail.erb (3.1ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/method.html.erb within layouts/apipie/apipie (5.3ms)
+Completed 200 OK in 38ms (Views: 8.8ms)
+REST_API: skipping Apipie::ApipiesController#index
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap.min.css" for 192.168.1.82 at 2016-02-20 12:39:08 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/prettify.css" for 192.168.1.82 at 2016-02-20 12:39:08 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap-responsive.min.css" for 192.168.1.82 at 2016-02-20 12:39:08 +0100
+
+
+Started GET "/apipie/javascripts/bundled/jquery-1.7.2.js" for 192.168.1.82 at 2016-02-20 12:39:08 +0100
+
+
+Started GET "/apipie/stylesheets/application.css" for 192.168.1.82 at 2016-02-20 12:39:08 +0100
+
+
+Started GET "/apipie/javascripts/bundled/bootstrap-collapse.js" for 192.168.1.82 at 2016-02-20 12:39:08 +0100
+
+
+Started GET "/apipie/javascripts/bundled/prettify.js" for 192.168.1.82 at 2016-02-20 12:39:08 +0100
+
+
+Started GET "/apipie/javascripts/apipie.js" for 192.168.1.82 at 2016-02-20 12:39:08 +0100
+
+
+Started GET "/actions" for 192.168.1.82 at 2016-02-20 12:39:51 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ActionsController#index as HTML
+  [1m[35mAction Load (0.5ms)[0m  SELECT "actions".* FROM "actions"
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModel::Serializer::Adapter::JsonApi (1.94ms)
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/builds" for 192.168.1.82 at 2016-02-20 12:39:53 +0100
+Processing by BuildsController#index as HTML
+  [1m[36mBuild Load (0.2ms)[0m  [1mSELECT "builds".* FROM "builds"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModel::Serializer::Adapter::JsonApi (1.45ms)
+Completed 200 OK in 13ms (Views: 9.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/apps" for 192.168.1.82 at 2016-02-20 12:40:00 +0100
+Processing by AppsController#index as HTML
+  [1m[35mApp Load (0.2ms)[0m  SELECT "apps".* FROM "apps"
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModel::Serializer::Adapter::JsonApi (1.4ms)
+Completed 200 OK in 20ms (Views: 17.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/apipie/1.0.html" for 127.0.0.1 at 2016-02-20 12:40:27 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Apipie::ApipiesController#index as HTML
+  Parameters: {"version"=>"1.0.html"}
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_languages.erb (0.4ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/index.html.erb within layouts/apipie/apipie (392.4ms)
+Completed 200 OK in 447ms (Views: 404.3ms)
+REST_API: skipping Apipie::ApipiesController#index
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap.min.css" for 127.0.0.1 at 2016-02-20 12:40:28 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/prettify.css" for 127.0.0.1 at 2016-02-20 12:40:28 +0100
+
+
+Started GET "/apipie/javascripts/bundled/prettify.js" for 127.0.0.1 at 2016-02-20 12:40:28 +0100
+
+
+Started GET "/apipie/javascripts/bundled/jquery-1.7.2.js" for 127.0.0.1 at 2016-02-20 12:40:28 +0100
+
+
+Started GET "/apipie/stylesheets/application.css" for 127.0.0.1 at 2016-02-20 12:40:28 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap-responsive.min.css" for 127.0.0.1 at 2016-02-20 12:40:28 +0100
+
+
+Started GET "/apipie/javascripts/bundled/bootstrap-collapse.js" for 127.0.0.1 at 2016-02-20 12:40:28 +0100
+
+
+Started GET "/apipie/javascripts/apipie.js" for 127.0.0.1 at 2016-02-20 12:40:28 +0100
+
+
+Started GET "/apipie/1.0/apps/index.html" for 127.0.0.1 at 2016-02-20 12:40:31 +0100
+Processing by Apipie::ApipiesController#index as HTML
+  Parameters: {"version"=>"1.0", "resource"=>"apps", "method"=>"index.html"}
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_languages.erb (0.1ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_params.html.erb (1.1ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_headers.html.erb (0.6ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_method_detail.erb (4.9ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/method.html.erb within layouts/apipie/apipie (8.5ms)
+Completed 200 OK in 34ms (Views: 13.4ms)
+REST_API: skipping Apipie::ApipiesController#index
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap.min.css" for 127.0.0.1 at 2016-02-20 12:40:31 +0100
+
+
+Started GET "/apipie/javascripts/bundled/jquery-1.7.2.js" for 127.0.0.1 at 2016-02-20 12:40:31 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/prettify.css" for 127.0.0.1 at 2016-02-20 12:40:31 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap-responsive.min.css" for 127.0.0.1 at 2016-02-20 12:40:31 +0100
+
+
+Started GET "/apipie/stylesheets/application.css" for 127.0.0.1 at 2016-02-20 12:40:31 +0100
+
+
+Started GET "/apipie/javascripts/bundled/bootstrap-collapse.js" for 127.0.0.1 at 2016-02-20 12:40:31 +0100
+
+
+Started GET "/apipie/javascripts/bundled/prettify.js" for 127.0.0.1 at 2016-02-20 12:40:31 +0100
+
+
+Started GET "/apipie/javascripts/apipie.js" for 127.0.0.1 at 2016-02-20 12:40:31 +0100
+
+
+Started GET "/apipie/1.0/actions/index.html" for 127.0.0.1 at 2016-02-20 12:40:34 +0100
+Processing by Apipie::ApipiesController#index as HTML
+  Parameters: {"version"=>"1.0", "resource"=>"actions", "method"=>"index.html"}
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_languages.erb (0.0ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_params.html.erb (0.3ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_headers.html.erb (0.0ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_method_detail.erb (2.7ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/method.html.erb within layouts/apipie/apipie (5.0ms)
+Completed 200 OK in 36ms (Views: 9.8ms)
+REST_API: skipping Apipie::ApipiesController#index
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap.min.css" for 127.0.0.1 at 2016-02-20 12:40:34 +0100
+
+
+Started GET "/apipie/stylesheets/application.css" for 127.0.0.1 at 2016-02-20 12:40:34 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/prettify.css" for 127.0.0.1 at 2016-02-20 12:40:34 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap-responsive.min.css" for 127.0.0.1 at 2016-02-20 12:40:34 +0100
+
+
+Started GET "/apipie/javascripts/bundled/jquery-1.7.2.js" for 127.0.0.1 at 2016-02-20 12:40:34 +0100
+
+
+Started GET "/apipie/javascripts/bundled/bootstrap-collapse.js" for 127.0.0.1 at 2016-02-20 12:40:34 +0100
+
+
+Started GET "/apipie/javascripts/bundled/prettify.js" for 127.0.0.1 at 2016-02-20 12:40:34 +0100
+
+
+Started GET "/apipie/javascripts/apipie.js" for 127.0.0.1 at 2016-02-20 12:40:34 +0100
+
+
+Started GET "/apipie/1.0/builds/index.html" for 127.0.0.1 at 2016-02-20 12:40:36 +0100
+Processing by Apipie::ApipiesController#index as HTML
+  Parameters: {"version"=>"1.0", "resource"=>"builds", "method"=>"index.html"}
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_languages.erb (0.0ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_params.html.erb (0.4ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_headers.html.erb (0.0ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_method_detail.erb (2.7ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/method.html.erb within layouts/apipie/apipie (5.1ms)
+Completed 200 OK in 35ms (Views: 9.3ms)
+REST_API: skipping Apipie::ApipiesController#index
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap.min.css" for 127.0.0.1 at 2016-02-20 12:40:36 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap-responsive.min.css" for 127.0.0.1 at 2016-02-20 12:40:36 +0100
+
+
+Started GET "/apipie/javascripts/bundled/jquery-1.7.2.js" for 127.0.0.1 at 2016-02-20 12:40:36 +0100
+
+
+Started GET "/apipie/stylesheets/application.css" for 127.0.0.1 at 2016-02-20 12:40:36 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/prettify.css" for 127.0.0.1 at 2016-02-20 12:40:36 +0100
+
+
+Started GET "/apipie/javascripts/bundled/bootstrap-collapse.js" for 127.0.0.1 at 2016-02-20 12:40:36 +0100
+
+
+Started GET "/apipie/javascripts/bundled/prettify.js" for 127.0.0.1 at 2016-02-20 12:40:36 +0100
+
+
+Started GET "/apipie/javascripts/apipie.js" for 127.0.0.1 at 2016-02-20 12:40:36 +0100
+
+
+Started GET "/apipie/1.0.html" for 127.0.0.1 at 2016-02-20 14:16:43 +0100
+Processing by Apipie::ApipiesController#index as HTML
+  Parameters: {"version"=>"1.0.html"}
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_languages.erb (0.0ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/index.html.erb within layouts/apipie/apipie (2.3ms)
+Completed 200 OK in 41ms (Views: 7.0ms)
+REST_API: skipping Apipie::ApipiesController#index
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap.min.css" for 127.0.0.1 at 2016-02-20 14:16:43 +0100
+
+
+Started GET "/apipie/javascripts/bundled/prettify.js" for 127.0.0.1 at 2016-02-20 14:16:43 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/prettify.css" for 127.0.0.1 at 2016-02-20 14:16:43 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap-responsive.min.css" for 127.0.0.1 at 2016-02-20 14:16:43 +0100
+
+
+Started GET "/apipie/stylesheets/application.css" for 127.0.0.1 at 2016-02-20 14:16:43 +0100
+
+
+Started GET "/apipie/javascripts/bundled/jquery-1.7.2.js" for 127.0.0.1 at 2016-02-20 14:16:43 +0100
+
+
+Started GET "/apipie/javascripts/apipie.js" for 127.0.0.1 at 2016-02-20 14:16:43 +0100
+
+
+Started GET "/apipie/javascripts/bundled/bootstrap-collapse.js" for 127.0.0.1 at 2016-02-20 14:16:43 +0100
+
+
+Started GET "/apipie" for 192.168.1.72 at 2016-02-20 14:17:28 +0100
+Processing by Apipie::ApipiesController#index as HTML
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/_languages.erb (0.0ms)
+  Rendered /Users/matchi/.rvm/gems/ruby-2.2.1/gems/apipie-rails-0.3.5/app/views/apipie/apipies/index.html.erb within layouts/apipie/apipie (1.4ms)
+Completed 200 OK in 30ms (Views: 5.2ms)
+REST_API: skipping Apipie::ApipiesController#index
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap.min.css" for 192.168.1.72 at 2016-02-20 14:17:28 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/prettify.css" for 192.168.1.72 at 2016-02-20 14:17:28 +0100
+
+
+Started GET "/apipie/stylesheets/bundled/bootstrap-responsive.min.css" for 192.168.1.72 at 2016-02-20 14:17:28 +0100
+
+
+Started GET "/apipie/stylesheets/application.css" for 192.168.1.72 at 2016-02-20 14:17:28 +0100
+
+
+Started GET "/apipie/javascripts/bundled/jquery-1.7.2.js" for 192.168.1.72 at 2016-02-20 14:17:28 +0100
+
+
+Started GET "/apipie/javascripts/bundled/bootstrap-collapse.js" for 192.168.1.72 at 2016-02-20 14:17:28 +0100
+
+
+Started GET "/apipie/javascripts/bundled/prettify.js" for 192.168.1.72 at 2016-02-20 14:17:28 +0100
+
+
+Started GET "/apipie/javascripts/apipie.js" for 192.168.1.72 at 2016-02-20 14:17:28 +0100
