@@ -8,6 +8,6 @@ class LanesController < ApplicationController
   param :included, String, "Name of the related entities which should be included beside the base resource"
   def index
     included = params[:include].try(:split, ",")
-    render json: Lane.all, include: included
+    render json: Lane.all, include: ["actions"]
   end
 end

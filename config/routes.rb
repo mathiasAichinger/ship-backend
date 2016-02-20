@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
-  resources :action_templates, except: [:new, :edit]
-  resources :lane_templates, except: [:new, :edit]
-  resources :lanes, except: [:new, :edit]
+  scope :api do
+    resources :action_templates, except: [:new, :edit]
+    resources :lane_templates, except: [:new, :edit]
+    resources :lanes, except: [:new, :edit]
+
+    resources :actions, except: [:new, :edit]
+    resources :builds, except: [:new, :edit]
+    resources :apps
+  end
   apipie
-  resources :actions, except: [:new, :edit]
-  resources :builds, except: [:new, :edit]
-  resources :apps, except: [:new, :edit]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
