@@ -17,6 +17,7 @@ group :development, :test do
   gem 'faker'
   gem 'rspec-rails'
   gem 'awesome_print'
+  gem 'apipie-rails'
 end
 
 group :test do
