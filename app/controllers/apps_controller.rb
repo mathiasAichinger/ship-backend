@@ -45,6 +45,9 @@ class AppsController < ApplicationController
     end
 
     @app.attributes = app_params
+    puts "-------------------------".green
+    puts app_params
+    puts "-------------------------".green
 
     if @app.save
       render json: @app

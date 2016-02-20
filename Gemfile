@@ -10,6 +10,7 @@ gem 'spring', :group => :development
 
 gem 'rack-cors', :require => 'rack/cors'
 gem 'sqlite3'
+gem 'colorize'
 
 gem "active_model_serializers"
 

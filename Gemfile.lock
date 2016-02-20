@@ -55,6 +55,7 @@ GEM
       xpath (~> 2.0)
     childprocess (0.5.9)
       ffi (~> 1.0, >= 1.0.11)
+    colorize (0.7.7)
     concurrent-ruby (1.0.0)
     database_cleaner (1.5.1)
     diff-lcs (1.2.5)
@@ -163,6 +164,7 @@ DEPENDENCIES
   apipie-rails
   awesome_print
   capybara
+  colorize
   database_cleaner
   factory_girl_rails
   faker
