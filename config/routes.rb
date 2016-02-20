@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :lanes, except: [:new, :edit]
   apipie
   resources :actions, except: [:new, :edit]
   resources :builds, except: [:new, :edit]
