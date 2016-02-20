@@ -16,11 +16,15 @@ class AppsController < ApplicationController
   desc "Returns the app with the given id"
   param :id, :number, "Id of the App"
   param :included, String, "Name of the related entities which should be included beside the base resource"
-
   def show
     included = params[:include].try(:split, ",")
     id = params[:id]
-    render json: App.find(id), include: included
+    @app = App.find_by(id: id)
+    if @app.nil?
+      render json: {errors: "Record not found"}, status: :not_found
+    else
+      render json: @app, include: included
+    end
   end
 
   api :POST, '/apps', "Creates a new app"
@@ -30,6 +34,19 @@ class AppsController < ApplicationController
       render json: @app, status: :created
     else
       render json: {errors: @app.errors}, status: :unprocessable_entity
+    end
+  end
+
+  api :DELETE, '/apps/:id', "Deletes the given app"
+  param :id, :number, "Id of the App"
+  def destroy
+    id = params[:id]
+    @app = App.find_by(id: id)
+    unless @app.nil?
+      @app.delete
+      render :nothing => true, status: :no_content
+    else
+      render json: {errors: "Record not found"}, status: :not_found
     end
   end
 
