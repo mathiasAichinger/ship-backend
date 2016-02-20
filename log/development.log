@@ -3300,3 +3300,143 @@ Migrating to AddAppIdToBuild (20160220141220)
   [1m[35mBuild Load (0.1ms)[0m  SELECT "builds".* FROM "builds" WHERE "builds"."app_id" = ?  [["app_id", 1]]
   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
   [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddLaneIdToAction (20160220141550)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "actions" ADD "lane_id" integer[0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_actions_on_lane_id" ON "actions" ("lane_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160220141550"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='at' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='lt_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='lt_at' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_actions_on_lane_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_actions_on_lane_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='lt' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='lt' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='lt_a' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='lt_a' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_builds_on_app_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_builds_on_app_id' AND type='index'
+
+  [1m[36mLane Load (0.2ms)[0m  [1mSELECT  "lanes".* FROM "lanes" WHERE "lanes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAction Load (0.1ms)[0m  SELECT  "actions".* FROM "actions" WHERE "actions"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "actions" SET "lane_id" = ?, "updated_at" = ? WHERE "actions"."id" = ?  [["lane_id", 1], ["updated_at", "2016-02-20 14:19:28.859198"], ["id", 1]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mAction Load (0.2ms)[0m  SELECT "actions".* FROM "actions" WHERE "actions"."lane_id" = ?  [["lane_id", 1]]
+  [1m[36mBuild Load (0.2ms)[0m  [1mSELECT  "builds".* FROM "builds" WHERE "builds"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[36mBuild Load (0.2ms)[0m  [1mSELECT  "builds".* FROM "builds" WHERE "builds"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLane Load (0.2ms)[0m  SELECT  "lanes".* FROM "lanes" WHERE "lanes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLane Load (0.5ms)[0m  [1mSELECT  "lanes".* FROM "lanes" WHERE "lanes"."build_id" = ? LIMIT 1[0m  [[nil, 1]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddBuildIdToLane (20160220141819)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "lanes" ADD "build_id" integer[0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_lanes_on_build_id" ON "lanes" ("build_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160220141819"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='at' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='lt_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='lt_at' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_actions_on_lane_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_actions_on_lane_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='lt' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='lt' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='lt_a' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='lt_a' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_builds_on_app_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_builds_on_app_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_lanes_on_build_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_lanes_on_build_id' AND type='index'
+[0m
+  [1m[36mBuild Load (0.2ms)[0m  [1mSELECT  "builds".* FROM "builds" WHERE "builds"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLane Load (0.1ms)[0m  SELECT  "lanes".* FROM "lanes" WHERE "lanes"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLane Load (0.2ms)[0m  [1mSELECT  "lanes".* FROM "lanes" WHERE "lanes"."build_id" = ? LIMIT 1[0m  [["build_id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "lanes" SET "build_id" = ?, "updated_at" = ? WHERE "lanes"."id" = ?[0m  [["build_id", 1], ["updated_at", "2016-02-20 14:21:14.759957"], ["id", 1]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
