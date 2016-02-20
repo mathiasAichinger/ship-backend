@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160220185334) do
+ActiveRecord::Schema.define(version: 20160220222543) do
 
   create_table "action_templates", force: :cascade do |t|
     t.string   "name"
@@ -35,16 +35,15 @@ ActiveRecord::Schema.define(version: 20160220185334) do
   add_index "action_templates_lane_templates", ["lane_template_id", "action_template_id"], name: "lt_at"
 
   create_table "actions", force: :cascade do |t|
-    t.string   "name"
-    t.string   "description"
     t.float    "progress"
     t.string   "status"
     t.string   "logs"
     t.datetime "startDate"
     t.datetime "endDate"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "lane_id"
+    t.integer  "action_template_id"
   end
 
   add_index "actions", ["lane_id"], name: "index_actions_on_lane_id"
@@ -87,16 +86,15 @@ ActiveRecord::Schema.define(version: 20160220185334) do
   end
 
   create_table "lanes", force: :cascade do |t|
-    t.string   "name"
-    t.string   "description"
     t.float    "progress"
     t.datetime "startDate"
     t.datetime "endDate"
     t.string   "logs"
     t.string   "status"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.integer  "build_id"
+    t.integer  "lane_template_id"
   end
 
   add_index "lanes", ["build_id"], name: "index_lanes_on_build_id"
