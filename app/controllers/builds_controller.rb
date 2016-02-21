@@ -31,13 +31,10 @@ class BuildsController < ApplicationController
     @build.startDate = Time.now
     @build.status = "pending"
 
-
     app = App.find(clearedParams[:app_id])
     @build.app = app
 
     lane_template = LaneTemplate.find(clearedParams[:lane_template_id])
-
-
 
     lane = Lane.new
     lane.lane_template = lane_template
@@ -48,15 +45,15 @@ class BuildsController < ApplicationController
       action.action_template = template
       action.save
       actions << action
-
     end
 
     lane.actions = actions
     lane.save
     @build.lane = lane
-    @build.save
+
 
     if @build.save
+      BuildWorker.perform_async(@build.id)
       render json: @build, status: :created
     else
       render json: {errors: @build.errors}, status: :unprocessable_entity

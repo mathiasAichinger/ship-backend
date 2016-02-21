@@ -10,6 +10,9 @@ Normal mode and port 3000
 
 	rails s
 
+## Run Build simulator
+
+    bundle exec sidekiq
 
 ### Drop and setup DB
 	rake db:drop

@@ -14,6 +14,8 @@ gem 'colorize'
 
 gem "active_model_serializers"
 
+gem 'sidekiq'
+
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'

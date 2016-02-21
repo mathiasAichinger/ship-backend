@@ -4,7 +4,7 @@ class Action < ActiveRecord::Base
 
   after_initialize :initialize_values
   def initialize_values(attributes = {}, options = {})
-    self.progress = 0.0
-    self.status = "pending"
+    self.progress ||= 0.0
+    self.status ||= "pending"
   end
 end
