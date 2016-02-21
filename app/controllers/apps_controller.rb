@@ -62,7 +62,7 @@ class AppsController < ApplicationController
     id = params[:id]
     @app = App.find_by(id: id)
     unless @app.nil?
-      @app.delete
+      @app.destroy
       render :nothing => true, status: :no_content
     else
       render json: {errors: "Record not found"}, status: :not_found
