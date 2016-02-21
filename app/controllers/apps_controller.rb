@@ -30,6 +30,7 @@ class AppsController < ApplicationController
   api :POST, '/apps', "Creates a new app"
   def create
     @app = App.new(app_params)
+    @app.lane_templates << LaneTemplate.find(1)
     if @app.save
       render json: @app, status: :created
     else
