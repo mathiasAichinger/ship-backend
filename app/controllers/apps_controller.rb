@@ -31,6 +31,7 @@ class AppsController < ApplicationController
   def create
     @app = App.new(app_params)
     @app.lane_templates << LaneTemplate.find(1)
+    @app.lane_templates << LaneTemplate.find(2)
     if @app.save
       render json: @app, status: :created
     else
